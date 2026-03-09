@@ -1,3 +1,9 @@
 [submodule "KernelBench"]
 	path = KernelBench
 	url = https://github.com/ScalingIntelligence/KernelBench.git
+[submodule "triton-cpu"]
+	path = triton-cpu
+	url = https://github.com/pytorch-labs/triton-cpu.git
+[submodule "tvm"]
+	path = tvm
+	url = https://github.com/apache/tvm

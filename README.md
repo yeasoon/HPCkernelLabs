@@ -15,6 +15,25 @@ conda activate hpc-kernel-labs
 # pip install torch==1.12.0+cu102 torchvision==0.13.0+cu102 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu102
 pip install triton
 pip install matplotlib
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
+
+```
+### triton-cpu
+```bash
+git clone https://github.com/pytorch-labs/triton-cpu.git
+cd triton-cpu
+
+# Build and install (takes 10–20 min)
+pip uninstall triton -y
+TRITON_BUILD_WITH_CLANG_LLD=0 pip install -e python --no-build-isolation
+```
+### tvm
+```bash
+git clone https://github.com/apache/tvm
+cd tvm
+git submodule update --init --recursive
+conda install -c conda-forge llvmdev=16 cmake
+CMAKE_ARGS="-DUSE_LLVM=llvm-config -DUSE_OPENMP=ON" pip install -e .
 
 ```
 
