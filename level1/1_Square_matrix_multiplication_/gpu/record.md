@@ -528,4 +528,21 @@ for (int e = tid; e < TILE*TILE; e += NTHREADS)
     As[r][c] = ...     // compiler may cache-bypass smem and use L1 directly
 }
 
-```
+
+# ncu lab
+- stride access will cause bank conflict, so we need to make sure that consecutive threads access consecutive columns in the shared memory tile. This way, we can achieve coalesced memory access and avoid bank conflicts, which will improve the performance of our matrix multiplication kernel.   40%
+* Non-coalesced: Lower L1 cache throughput, higher DRAM throughput, slower kernel duration.
+* Coalesced: Higher L1 cache throughput, lower DRAM throughput, faster kernel duration.
+* Key takeaway: Coalesced memory accesses significantly improve performance, especially for larger inputs.
+
+- branch divergence occurs when threads within the same warp take different execution paths due to conditional statements. This can lead to performance degradation as the GPU has to serialize the execution of different paths. To minimize branch divergence, we can structure our code to ensure that threads within the same warp follow the same execution path as much as possible, such as by using uniform conditions or by restructuring loops and conditionals to reduce divergence. 2%
+
+- Optimizations for Memory-Bound Kernels:
+
+* Fusions: Combining multiple operations into a single kernel to reduce memory accesses.
+* Quantization: Reducing data type size to improve arithmetic intensity.
+* Compilation: Using compilers like Torch Compiler to optimize memory access patterns and reduce overhead.
+* Optimizations for Compute-Bound Kernels:
+
+- Algorithm optimization: Rewriting the algorithm with fewer operations or improved mathematical formulations.
+- Key takeaway: Understanding the bottleneck (memory or compute) is crucial for selecting the right optimization strategies.
