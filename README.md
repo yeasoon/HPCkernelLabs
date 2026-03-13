@@ -26,6 +26,7 @@ cd triton-cpu
 # Build and install (takes 10–20 min)
 pip uninstall triton -y
 TRITON_BUILD_WITH_CLANG_LLD=0 pip install -e python --no-build-isolation
+export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 ```
 ### tvm
 ```bash
@@ -33,7 +34,7 @@ git clone https://github.com/apache/tvm
 cd tvm
 git submodule update --init --recursive
 conda install -c conda-forge llvmdev=16 cmake
-CMAKE_ARGS="-DUSE_LLVM=llvm-config -DUSE_OPENMP=ON" pip install -e .
+CMAKE_ARGS="-DUSE_LLVM=llvm-config -DUSE_OPENMP=ON -DUSE_CUDA=ON" pip install -e .
 
 ```
 
