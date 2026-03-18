@@ -1,7 +1,7 @@
 ## ncu need sudo to run, so we need to add sudo before ncu command
 
 ```bash
-sudo cp ncu-autho.conf  /etc/modprobe.d/
+sudo cp ../configs/ncu-autho.conf /etc/modprobe.d/
 sudo update-initramfs -u
 sudo reboot
 ```

@@ -20,7 +20,7 @@ endif()
 
 # Define the executable
 # Replace 'main.cpp' with the actual name of your source file
-add_executable(matmul_cpu naive.cpp)
-add_executable(microkernel microkernel.cpp)
+add_executable(matmul_cpu src/naive.cpp)
+add_executable(microkernel src/microkernel.cpp)
 # Optional: Print build type for confirmation
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")

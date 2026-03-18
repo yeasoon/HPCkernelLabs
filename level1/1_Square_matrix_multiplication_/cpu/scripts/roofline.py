@@ -26,5 +26,5 @@ plt.ylabel("GFLOPS")
 plt.title("Multi-level CPU Roofline")
 plt.grid(True)
 
-plt.savefig("cpu_roofline.png", dpi=300)
+plt.savefig("../assets/cpu_roofline.png", dpi=300)
 # plt.show()

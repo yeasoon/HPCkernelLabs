@@ -245,7 +245,7 @@ LLC misses still significant
     }
 ```
 ### performance
-![matmul_blocksize_analysis](./matmul_blocksize_analysis.png)
+![matmul_blocksize_analysis](../assets/matmul_blocksize_analysis.png)
 
 BS=1024
 - Time: 13.0037 s

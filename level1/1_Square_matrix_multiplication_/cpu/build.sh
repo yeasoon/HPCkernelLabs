@@ -12,4 +12,4 @@ cmake --build . --config Release
 ./microkernel
 
 
-#  g++ -O3 -march=native -mfma -funroll-loops -std=c++17 -pthread -o roofline roofline.cpp && ./roofline && numactl --cpunodebind=0 --membind=0 ./roofline
+# g++ -O3 -march=native -mfma -funroll-loops -std=c++17 -pthread -o roofline src/roofline.cpp && ./roofline && numactl --cpunodebind=0 --membind=0 ./roofline
