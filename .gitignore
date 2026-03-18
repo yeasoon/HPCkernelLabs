@@ -24,3 +24,7 @@
 *.cubin
 *.ptx
 *.fatbin
+# Local benchmark artifacts
+**/*.ncu-rep
+**/ncu_log
+level1/1_Square_matrix_multiplication_/cpu/roofline

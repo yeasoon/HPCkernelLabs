@@ -5,6 +5,24 @@
 - [ ] gpu add naive/triton/tvm/tilelang/ptx/sass version for some specific gpu (i can get and used)
 - [ ] build tools to analysis the performance, or use agent to pipline those work
 
+## repository layout
+```
+HPCkernelLabs/
+├── level1/1_Square_matrix_multiplication_/
+│   ├── cpu/
+│   │   ├── src/      # C++ kernels and analysis helpers
+│   │   ├── scripts/  # Python runners/plot generators
+│   │   ├── docs/     # notes, records, perf guidance
+│   │   └── assets/   # generated plots and topology images
+│   └── gpu/
+│       ├── src/      # CUDA kernels
+│       ├── scripts/  # Triton/TVM/TileLang experiments
+│       ├── docs/     # profiling notes and run records
+│       └── configs/  # profiler/system configuration snippets
+├── tools/            # shared benchmarking/analyzer utilities
+└── KernelBench, triton-cpu, tvm/  # external dependencies/submodules
+```
+
 ## env setup
 * create conda env
 ```bash
@@ -58,7 +76,7 @@ https://gitlab.com/hpctoolkit/hpctoolkit.git
 
 ```
 lscpu
-lstopo --of png > topology.png
+lstopo --of png > level1/1_Square_matrix_multiplication_/cpu/assets/topology.png
 
 nvidia-smi topo -m
 cuda-10.1/extras/demo_suite/deviceQuery 
