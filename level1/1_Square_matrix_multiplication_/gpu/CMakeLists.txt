@@ -8,7 +8,7 @@ if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
   set(CMAKE_CUDA_ARCHITECTURES native)
 endif()
 
-add_executable(matmul naive.cu)
+add_executable(matmul src/naive.cu)
 
 target_compile_options(matmul PRIVATE
   $<$<COMPILE_LANGUAGE:CUDA>:-O2 --use_fast_math>

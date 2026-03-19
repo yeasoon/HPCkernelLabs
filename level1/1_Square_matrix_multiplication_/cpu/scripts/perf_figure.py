@@ -32,5 +32,5 @@ ax2.grid(True)
 
 plt.tight_layout()
 
-plt.savefig("matmul_blocksize_analysis.png", dpi=300)
+plt.savefig("../assets/matmul_blocksize_analysis.png", dpi=300)
 # plt.show()
